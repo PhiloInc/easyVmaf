@@ -60,7 +60,9 @@ RUN \
 	wget https://github.com/FFmpeg/FFmpeg/archive/refs/heads/master.tar.gz  && \
 	tar -xzf ${FFMPEG_version}.tar.gz && \
 	cd FFmpeg-${FFMPEG_version} && \
-	./configure --enable-libvmaf --enable-version3 --enable-shared --enable-libdav1d && \
+	./configure \
+        --enable-libvmaf --enable-version3 --enable-shared --enable-libdav1d \
+        --enable-libsrt && \
 	make -j4 && \
 	make install && \
 	rm -rf /tmp/ffmpeg
